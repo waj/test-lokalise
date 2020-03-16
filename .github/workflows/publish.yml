@@ -16,3 +16,4 @@ jobs:
           api-token: ${{ secrets.LOCALIZE_TOKEN }}
           project-id: 216979255e6f991a4f5fe5.23697947
           file-path: i18n-en.json
+          convert-placeholders: false
