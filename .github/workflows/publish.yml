@@ -1,0 +1,20 @@
+name: Publish
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  publish_to_lokalise:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Push English content to Lokalise
+        uses: manastech/lokalise-file-push@upload-params
+        with:
+          api-token: ${{ secrets.LOCALIZE_TOKEN }}
+          project-id: 216979255e6f991a4f5fe5.23697947
+          file-path: i18n-en.json
+          params:
+            convert_placeholders: 'false'
